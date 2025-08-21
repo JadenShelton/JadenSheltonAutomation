@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTCC Diagram</title>
+    <script src="https://unpkg.com/gojs/release/go.js"></script>
+    <link rel="stylesheet" href="./artccDiagramStyle.css">
+</head>
+<body>
+    <body>
+    <div class="header">
+        <h1 id="pageTitle"> ARTCC Diagram </h1>
+    </div>
+    
+    <div class="topnav">
+        <a href="./home.html">Home</a>
+        <a class="active" href="./artccDiagram.html"> ARTCC Diagram </a>
+    </div>
+
+    <div class="diagram" style="position: relative">
+        <div id="myDiagramDiv"
+            style="background-color: #f2f2f2; border: solid 1px black; width: 100%; height: 700px"></div>
+    </div>
+
+    <script>
+        const myDiagram = new go.Diagram("myDiagramDiv");
+
+        myDiagram.nodeTemplate = 
+            new go.Node().add(new go.Picture( {margin: 10, width: 500, height: 500}).bind("source"));
+
+        myDiagram.model = new go.Model(
+            [ // for each object in this Array, the Diagram creates a Node to represent it
+              { name: "EADS", source: "/artccDiagramImages/EADSImage.png"}
+            ]);
+    </script>
+        
+   <div class="footer">
+        <h3>ZDV ARTCC Diagram</h3>
+    </div>
+
+</body>
+</html>
