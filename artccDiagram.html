@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./artccDiagramStyle.css">
 </head>
 <body>
-    <body>
     <div class="header">
         <h1 id="pageTitle"> ARTCC Diagram </h1>
     </div>
@@ -18,15 +17,26 @@
         <a class="active" href="./artccDiagram.html"> ARTCC Diagram </a>
     </div>
 
-    <div class="diagram" style="position: relative">
-        <div id="myDiagramDiv"
-            style="background-color: #f2f2f2; border: solid 1px black; width: 100%; height: 700px"></div>
+    <div id="diagramOuter">
+        <div id="diagramInner">
+
+            <img id="backgroundDiagramImage" src="./ARTCC_ZDV.png" style="width: 100%;" usemap="#diagramMap">
+
+            <map name="diagramMap">
+                
+            </map>
+
+            <box id="FDIO" class="infoBox" style="width: 67px; height: 36px; left: 435px; top: 197px;"></box>
+
+        </div>
     </div>
+
+    
 
    <div class="footer">
         <h3>ZDV ARTCC Diagram</h3>
     </div>
 
-    <script src = "artccDiagram.js"></script>
+    
 </body>
 </html>
