@@ -2,72 +2,149 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
-    background-color: white;
-    padding: 10px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.header {
-  background-color: white;
-  text-align: center;
-  padding: 30px;
-}
-
-.header h1 {
-  font-size: 50px;
+  margin: 0px;
+  background-color: #ffffff;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  flex-grow: 1;
 }
 
 .topnav {
-  overflow: hidden;
-  background-color: #333;
-  border-radius: 15px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 24px;
+  background-color: rgba(33, 33, 36, 0.8);
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 20px;
 }
 
-.topnav a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
+.topnav a,
+.subnavbtn {
+  color: #ffffff;
   padding: 14px 16px;
   text-decoration: none;
-}
-
-.topnav a:hover {
-  background-color: steelblue
-}
-
-.topnav a.active {
-  background-color: steelblue;
-}
-
-.diagram {
-    margin-top: 20px;
-    z-index: 9;
-}
-
-.footer {
-  margin-top: 20px;
-  padding: 20px;
-  border-radius: 15px;
-  background-color: #333;
-  text-align: center;
-  color: white;
-}
-
-#diagramInner{
-  position: relative;
-  overflow:auto;
-  transform-origin: 0px 0px;
-}
-
-.infoBox {
-  position:absolute;
-  border: 2px solid black;
-}
-
-
-.infoBox:hover{
-  outline: 3px solid red;
+  font-size: 16px;
+  background: none;
+  border: none;
   cursor: pointer;
+  font-family: inherit;
+  transition: color 0.3s ease;
 }
+
+.topnav a:hover,
+.subnavbtn:hover {
+  color: #2997ff;;
+  background-color: rgba(22, 22, 24, 0.1);
+  border-radius: 6px;
+}
+
+/* The subnavigation menu */
+.subnav {
+  position: relative;
+}
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  top: 100%;
+  left: -50;
+  transform-origin: top center;
+  background-color: rgba(33, 33, 36, 0.8);
+  padding: 20px 40px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  display: flex;
+  gap: 40px;
+  min-width: 600px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+}
+
+/* Show dropdown on hover */
+.subnav:hover .subnav-content {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Column inside dropdown */
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.column h4 {
+  margin-bottom: 10px;
+  color: #aaaaaa;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.column a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 4px 0;
+  transition: color 0.3s ease;
+}
+
+.column a:hover {
+  color: #2997ff;
+}
+
+#home::before {
+  content: '\2617';
+  margin-right: 6px;
+}
+
+#artcc::before {
+  content: '\2708';
+  margin-right: 6px; 
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  padding: 40px 20px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  color: #161618;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px; /*Padding for small screens*/
+}
+
+footer {
+  padding: 40px 20px;
+  background-color: rgba(33, 33, 36, 0.8);
+  color: #ffffff;
+  text-align: center;
+}
+

@@ -7,42 +7,56 @@
     <link rel="stylesheet" href="./homeStyle.css">
 </head>
 <body>
-    <div class="header">
-        <h1 id="pageTitle"> Jaden's Homepage </h1>
-    </div>
-    
-    <div class="topnav">
-        <a class="active" href="./home.html">Home</a>
-        <a href="./artccDiagram.html">ARTCC Diagram</a>
-    </div>
-    <div class="row">
-        <div class="main">
-            <h2>Calendar</h2>
-            <div class="calendar" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh;">
-                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FDenver&showPrint=0&src=amFkZW5zaGVsdG9uMDJAZ21haWwuY29t&src=ZmFtaWx5MTI5MzA3NzAzNTkxODk5MjU1OTZAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%237986cb&color=%234285f4&color=%230b8043" style="border:solid 1px #777" position: absolute; top: 0; left: 0; width=100% height=100% frameborder="0" scrolling="no"></iframe>
-            </div>
-        </div>
 
-        <div class="sidebar"> 
-                <h2>Tools</h2>
-                <a href="http://lumberjack.faa.gov/dashboard">Lumberjack</a>
-                <a href="https://technetrmlsb.faa.gov/logsdash/Index/WWS13/null/All/All/null">RMLS Dashboard</a>
-                <a href="https://tap.rmls.faa.gov/account/login">TAP</a>
-                <h2>Resources</h2>
-                <a href="https://my.faa.gov/org/linebusiness/ato/operations/ajw1/noag/nas_policy/orders/6000_15/appendix_a">Appendix A</a>
-                <a href="https://nas.amc.faa.gov/phoenix/views/technicalLibrary.xhtml?c=TI">National Technical Library</a>
-                <a href="https://nassupport.faa.gov/ismt2/website_login/login_1.aspx">PMO</a>
-                <h2>Administrative</h2>
-                <a href="https://castle.faa.gov/wfrmLogin.aspx?ReturnUrl=%2f">Castle</a>
-                <a href="https://elms.faa.gov/">eLMS</a>
-                <a href="https://www.employeeexpress.gov/">Employee Express</a>
-                
+    <nav class="topnav">
+        <a id="home" href="./home.html"></a>
+        <a id="artcc" href="./artccDiagram.html">ARTCC Diagram</a>
+
+        <div class="subnav">
+            <button id="Links" class="subnavbtn">Links</button>
+            <div class="subnav-content">
+                <div class="column">
+                    <h4>Resources</h4>
+                    <a href="https://my.faa.gov/org/linebusiness/ato/operations/ajw1/noag/nas_policy/orders/6000_15/appendix_a" target="_blank">Appendix A</a>
+                    <a href="https://nas.amc.faa.gov/phoenix/views/technicalLibrary.xhtml?c=TI" target="_blank">National Technical Library</a>
+                    <a href="https://nassupport.faa.gov/ismt2/website_login/login_1.aspx" target="_blank">PMO</a>
+                </div>
+                <div class="column">
+                    <h4>Tools</h4>
+                    <a href="http://lumberjack.faa.gov:5006/dashboard" target="_blank">Lumberjack</a>
+                    <a href="https://technetrmlsb.faa.gov/logsdash/Index/WWS13/null/All/All/null" target="_blank">RMLS Dashboard</a>
+                    <a href="https://tap.rmls.faa.gov/account/login" target="_blank">TAP</a>
+                </div>
+                <div class="column">
+                    <h4>Administration</h4>
+                    <a href="https://castle.faa.gov/wfrmLogin.aspx?ReturnUrl=%2f" target="_blank">Castle</a>
+                    <a href="https://elms.faa.gov/" target="_blank">eLMS</a>
+                    <a href="https://www.employeeexpress.gov/" target="_blank">Employee Express</a>
+                </div>
+            </div>    
         </div>
-    </div>
+    </nav>
+
+    <main>
+        <calendar class="container calendar">
+            <h2>Calendar</h2>
+            <iframe 
+                src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FDenver&showPrint=0&src=amFkZW5zaGVsdG9uMDJAZ21haWwuY29t&src=ZmFtaWx5MTI5MzA3NzAzNTkxODk5MjU1OTZAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%237986cb&color=%234285f4&color=%230b8043"  
+                frameborder="0" 
+                scrolling="no"
+                allowfullscreen
+            ></iframe>
+        </calendar>
+
+        <descrition class="container">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis id aliquid accusamus commodi reprehenderit eos perspiciatis, voluptatibus quasi vitae itaque accusantium quisquam. Sed reprehenderit dolore autem doloremque inventore? Cupiditate, pariatur.</p>
+        </descrition>
+    </main>
     
-    <div class="footer">
-        <h3>ZDV Automation</h3>
-    </div>
-   
+    <footer>
+        <div class="container">
+            <h3>ZDV Automation</h3>
+        </div>
+    </footer>
 </body>
 </html>

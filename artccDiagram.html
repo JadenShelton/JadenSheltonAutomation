@@ -4,37 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARTCC Diagram</title>
-    <script src="https://unpkg.com/gojs/release/go.js"></script>
     <link rel="stylesheet" href="./artccDiagramStyle.css">
 </head>
 <body>
-    <div class="header">
-        <h1 id="pageTitle"> ARTCC Diagram </h1>
-    </div>
-    
-    <div class="topnav">
-        <a href="./home.html">Home</a>
-        <a class="active" href="./artccDiagram.html"> ARTCC Diagram </a>
-    </div>
 
-    <div id="diagramOuter">
-        <div id="diagramInner">
+    <nav class="topnav">
+        <a id="home" href="./home.html"></a>
+        <a id="artcc" href="./artccDiagram.html">ARTCC Diagram</a>
 
-            <img id="backgroundDiagramImage" src="./ARTCC_ZDV.png" style="width: 100%;" usemap="#diagramMap">
-
-            <box id="FDIO" class="infoBox" style="width: 67px; height: 36px; left: 435px; top: 197px;"></box>
-
-            <box id="Rconsole" class="infoBox" style="width: 67px; height: 36px; right: 310px; top: 575px;"></box>
-
+        <div class="subnav">
+            <button id="Links" class="subnavbtn">Links</button>
+            <div class="subnav-content">
+                <div class="column">
+                    <h4>Resources</h4>
+                    <a href="https://my.faa.gov/org/linebusiness/ato/operations/ajw1/noag/nas_policy/orders/6000_15/appendix_a" target="_blank">Appendix A</a>
+                    <a href="https://nas.amc.faa.gov/phoenix/views/technicalLibrary.xhtml?c=TI" target="_blank">National Technical Library</a>
+                    <a href="https://nassupport.faa.gov/ismt2/website_login/login_1.aspx" target="_blank">PMO</a>
+                </div>
+                <div class="column">
+                    <h4>Tools</h4>
+                    <a href="http://lumberjack.faa.gov:5006/dashboard" target="_blank">Lumberjack</a>
+                    <a href="https://technetrmlsb.faa.gov/logsdash/Index/WWS13/null/All/All/null" target="_blank">RMLS Dashboard</a>
+                    <a href="https://tap.rmls.faa.gov/account/login" target="_blank">TAP</a>
+                </div>
+                <div class="column">
+                    <h4>Administration</h4>
+                    <a href="https://castle.faa.gov/wfrmLogin.aspx?ReturnUrl=%2f" target="_blank">Castle</a>
+                    <a href="https://elms.faa.gov/" target="_blank">eLMS</a>
+                    <a href="https://www.employeeexpress.gov/" target="_blank">Employee Express</a>
+                </div>
+            </div>    
         </div>
-    </div>
-
+    </nav>
     
+    <main>
+        <diagram class="container diagram">
+            <img id="backgroundDiagramImage" src="./ARTCC_ZDV.png" style="width: 100%;" usemap="#diagramMap">
+        </diagram>
+    </main>
 
-   <div class="footer">
-        <h3>ZDV ARTCC Diagram</h3>
-    </div>
-
-    
+    <footer>
+        <div class="container">
+            <h3>ZDV Automation</h3>
+        </div>
+    </footer>
 </body>
 </html>
