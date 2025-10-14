@@ -1,26 +1,51 @@
-const $ = go.GraphObject.make;
+var scale = 1,
+    panning = false,
+    pointX = 0,
+    pointY = 0,
+    start = { x: 0, y: 0 },
+    zoom = document.getElementById("zoom");
+    myPic = document.getElementById("myPic");
 
-const myDiagram = new go.Diagram("myDiagramDiv");
+function setTransform() {
+    zoom.style.transform = "translate(" + pointX + "px, " + pointY + "px) scale(" + scale + ")";
+}
 
-//adjust view window on intial load
-const START_SCALE = 0.4;
-myDiagram.addDiagramListener("InitialLayoutCompleted", (e) => {
-    const d = e.diagram;
-    d.zoomToFit();
-    d.scale = START_SCALE;
+zoom.onmousedown = function (e) {
+    e.preventDefault();
+    start = { x: e.clientX - pointX, y: e.clientY - pointY };
+    panning = true;
+  
+}
 
-    });
+zoom.onmouseup = function (e) {
+    panning = false;
+}
 
-    //sets the Diagram image as the background
-myDiagram.add($(go.Part,
-    {
-        layerName: "Background",
-        position: new go.Point(0, 0),
-        selectable: false,
-        pickable: false    
-    },
-    $(go.Picture,
-        "/ARTCC_ZDV.png"  
-    )
-  )
-);
+zoom.onmousemove = function (e) {
+
+    myX = e.offsetX;
+    myY = e.offsetY;
+
+    e.preventDefault();
+
+    if (!panning) {
+        return;
+    }
+
+    pointX = (e.clientX - start.x);
+    pointY = (e.clientY - start.y);
+         
+    setTransform();
+}
+
+zoom.onwheel = function (e) {
+    e.preventDefault();
+    var xs = (e.clientX - pointX) / scale,
+    ys = (e.clientY - pointY) / scale,
+    delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
+    (delta > 0) ? (scale *= 1.2) : (scale /= 1.2);
+    pointX = e.clientX - xs * scale;
+    pointY = e.clientY - ys * scale;
+
+    setTransform();
+}
